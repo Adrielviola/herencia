@@ -18,3 +18,6 @@ def celulares(request):
 
 def login(request):
     return render(request, "app/login.html")
+
+def formulario(request):
+    return render(request, "app/formulario.html")
