@@ -12,6 +12,7 @@ urlpatterns=[
     path('Desktop/', views.desktop, name="desktop"),
     path('celulares/', views.celulares, name="celulares"),
     path('login/', views.login, name="login"),
-    path('form', views.formulario, name="formulario")
+    path('form/', views.formulario, name="formulario"),
+    path('form_api/', views.formularioapi, name="formulario_api")
     ]
 

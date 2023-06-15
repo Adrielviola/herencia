@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from app.form import formulario_api
 from .models import Usuario
 
 
@@ -31,3 +32,21 @@ def formulario(request):
 
     return render(request,"app/formulario.html")
 
+
+def formularioapi(request):
+
+    if request.method == "POST":
+        miFormulario = formulario_api(request.POST) # Aqui me llega la informacion del html
+        print(miFormulario)
+
+        if miFormulario.is_valid():
+            informacion = miFormulario.cleaned_data
+            usuario = Usuario(nombre=informacion["USUARIO"], dni=informacion["DNI"])
+            usuario.save()
+            return render(request, "app/index.html")
+    else:
+        miFormulario = formulario_api()
+
+        print(miFormulario)
+
+    return render(request, "app/formularioAPI.html", {"miFormulario": miFormulario})
