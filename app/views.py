@@ -3,6 +3,7 @@ from app.form import formulario_api
 from .models import Usuario
 
 
+
 def inicio(request):
     return render(request, "app/index.html")
 
@@ -50,3 +51,4 @@ def formularioapi(request):
         print(miFormulario)
 
     return render(request, "app/formularioAPI.html", {"miFormulario": miFormulario})
+
