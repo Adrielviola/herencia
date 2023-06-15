@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Usuario
 
 
 def inicio(request):
@@ -20,4 +21,13 @@ def login(request):
     return render(request, "app/login.html")
 
 def formulario(request):
-    return render(request, "app/formulario.html")
+    if request.method == 'POST':
+    
+        print(f"\n\n\n{request.POST}\n")
+# usuario(nuevo) =  Usuario (en mismo que en models.py)(request.POST['Usuario (en mismo que en models.py)'],(request.POST['dni(en mismo que en models.py']))
+        usuario =  Usuario(nombre=request.POST['Usuario'], dni=request.POST['dni'])
+        usuario.save()
+        return render(request, "app/index.html")
+
+    return render(request,"app/formulario.html")
+
