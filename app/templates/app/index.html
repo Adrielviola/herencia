@@ -1,0 +1,41 @@
+{% extends 'generales/base.html' %}
+
+{% load static %}
+
+{% block title %} Asset {% endblock title %}
+
+{% block main %}
+    <!-- Content section 1-->
+    <section id="scroll" style="background-image: url('/static/aplicacion/assets/img/portfolio/fullsize/fondo_5.jpg');background-size: cover;">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src='{% static "aplicacion/css/styles.css" %}' alt="..." /></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <!-- para cambiar de color se utiliza style y para las negritas <strong><strong> -->
+                        <h2 class="display-4"> <strong> <p style="color: whitesmoke;" >Bienvenido a la pagina de inventario </p> <strong></h2>
+                        <p style="color: whitesmoke;">esta pagina vas a poder llevar un orden de todos los activos de tu stock</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content section 3
+    <section>  <section id="scroll" style="background-image: url('/static/aplicacion/assets/img/portfolio/fullsize/fondo_4.png');background-size: cover;">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src='{% static "aplicacion/assets/img/portfolio/fullsize/09.jpg" %}' alt="..." /></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4">con el correr del  tiempo, vas a notar la diferencia </h2>
+                        <p> A comenzar!!!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock main %}-->
