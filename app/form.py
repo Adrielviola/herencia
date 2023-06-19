@@ -7,5 +7,5 @@ class formulario_api(forms.ModelForm):
         fields = '__all__'
 
 class BuscarNotebooksForm(forms.Form):
-    marca = forms.CharField(max_length=20, required=False)
-    modelo = forms.CharField(max_length=20, required=False)
+     marca = forms.CharField(max_length=20, required=False)
+     modelo = forms.CharField(max_length=20, required=False)
