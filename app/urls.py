@@ -6,15 +6,15 @@ from app import views
 urlpatterns=[
 
     path('admin/', admin.site.urls),
-    path('', views.inicio, name="inicio"),
-    path('aio/', views.aio, name="aio"),
-    path('desktop/', views.desktop, name="desktop"),
-    path('celulares/', views.celulares, name="celulares"),
-    path('notebook/', views.notebook, name="notebook"),
-    path('login/', views.login, name="login"),
-    path('form_api/', views.formularioapi, name="formularioapi"),
-    path('buscar_notebooks/', views.buscar_notebooks, name="buscar_notebooks"),
-
+    path('', views.inicio, name="Inicio"),
+    path('aio/', views.aio, name="Aio"),
+    path('desktop/', views.desktop, name="Desktop"),
+    path('celulares/', views.celulares, name="Celulares"),
+    path('notebook/', views.notebook, name="Notebook"),
+    path('login/', views.login, name="Login"),
+    path('form_api/', views.formularioapi, name="Formularioapi"),
+    path('buscar_notebooks/', views.buscar_notebooks, name="Buscar_notebooks"),
+    path('Mostrar_notebooks/', views.Mostrar_notebooks, name="Mostrar_notebooks"),
 
 ]
 

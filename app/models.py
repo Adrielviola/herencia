@@ -9,6 +9,10 @@ class Usuario(models.Model):
     dni = models.CharField(max_length=8)
     email = models.CharField(max_length=40)
 
+    def __str__(self):
+        return self.nombre
+
+
 class Notebook(models.Model):
 # usuario_id = models.ForeignKey(usuario)
     marca = models.CharField(max_length=20)
@@ -17,6 +21,11 @@ class Notebook(models.Model):
     nombre= models.CharField(max_length=30)
     apellido= models.CharField(max_length=30)
     dni = models.CharField(max_length=8)
+
+    
+    def __str__(self):
+        return self.marca
+
 class Desktop(models.Model):
     #usuario_id = models.ForeignKey(usuario)
     marca = models.CharField(max_length=20)

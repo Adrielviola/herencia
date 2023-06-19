@@ -46,3 +46,11 @@ def buscar_notebooks(request):
 
         context = {'form': form, 'notebooks': notebooks}
         return render(request, 'app/buscar_notebook.html', context)
+
+def Mostrar_notebooks(request):
+
+    notebooks = Notebook.objects.all() #trae todos los profesores
+
+    contexto= {"notebooks":notebooks} 
+
+    return render(request, "app/mostrar_notebooks.html",contexto)
