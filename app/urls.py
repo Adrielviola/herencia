@@ -7,12 +7,13 @@ urlpatterns=[
 
     path('admin/', admin.site.urls),
     path('', views.inicio, name="inicio"),
-    path('notebook/', views.notebook, name="notebook"),
     path('aio/', views.aio, name="aio"),
-    path('Desktop/', views.desktop, name="desktop"),
+    path('desktop/', views.desktop, name="desktop"),
     path('celulares/', views.celulares, name="celulares"),
+    path('notebook/', views.notebook, name="notebook"),
     path('login/', views.login, name="login"),
-    path('form/', views.formulario, name="formulario"),
-    path('form_api/', views.formularioapi, name="formulario_api"),
+    path('form_api/', views.formularioapi, name="formularioapi"),
+
+
 ]
 

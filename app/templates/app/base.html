@@ -9,7 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title> MANAGEMENT / CONTROL DE STOCK</title>
+        <title> 
+            {% block title %}
+                INICIO
+            {% endblock %}
+        </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'app/assets/favicon.ico' %}"  />
         <!-- Bootstrap icons-->
@@ -19,18 +23,19 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'app/css/styles.css' %}"  rel="stylesheet" />
     </head>
+
+    {% block main %}    {% endblock main %}
+
     <body>
         <!-- Navigation-->
         
         <nav class="navbar navbar-black bg-black static-top">
             <div class="container">
-                <li class="nav-item"><a class="nav-link" href="{% url 'inicio' %}"><p style="color: white;" ><strong>Inicio</strong></p></a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'notebook' %}"><p style="color: white;" ><strong>Notebooks</strong></p></a>
-                <li class="nav-item"><a class="nav-link" href="{% url 'aio' %}"><p style="color: white;" ><strong>Al In One</strong></a></p></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'desktop' %}"><p style="color: white;" ><strong>Desktop</strong></a></p></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'celulares' %}"><p style="color: white;" ><strong>Celulares</strong></p></a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><p style="color: white;" >Iniciar sesión</a></li>
-                <!-- <li class="nav-item"><a class="nav-link" href="#!"><p style="color: white;" >Crear cuenta</a></li>-->
+                <li class="nav-item"><a class="nav-link" href="{% url 'aio' %}"><p style="color: white;" ><strong>AIO</strong></p></a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'celulares' %}"><p style="color: white;" ><strong>CELULARES</strong></p></a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'desktop' %}"><p style="color: white;" ><strong>DESKTOP</strong></p></a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'notebook' %}"><p style="color: white;" ><strong>NOTEBOOK</strong></p></a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><p style="color: white;" ><strong>login</strong></p></a></li>
             </div>
         </nav>
         <!-- Masthead-->
@@ -40,7 +45,9 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">MANAGEMENT / CONTROL DE STOCK</h1>
+                            <h1 class="mb-5"> {% block title2 %}
+                                MANAGEMENT / CONTROL DE STOCK</h1>
+                                {% endblock %}
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -49,34 +56,26 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <!-- Email address input-->
-                                <div class="row">
-                                    <div class="col">
-                                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
-                                    </div>
-                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
-                                </div>
-                                </form>
-                        </div>
+                </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Icons Grid-->
         </section>
+
+        {% block img %}    
             <div class="col-lg-4">
                 <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                    <img class="img-fluid rounded-circle mb-3" src="{% static 'app/assets/img/bg-showcase-1.jpg' %}" alt="..." />
-                     <!--   <h5>Fred S.</h5>
+                    <img class="img-fluid rounded-circle mb-3" src="{% static 'app/assets//bg-showcase-1.jpg' %}" alt="..." />
+                    <!--   <h5>Fred S.</h5>
                         <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>-->
                     </div>
                 </div>
+        {% endblock %}
                 <div class="col-lg-4">
                     <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="{% static 'app/assets/img/bg-showcase-3.jpg' %}"  alt="..." />
+                        <img class="img-fluid rounded-circle mb-3" src="{% static 'app/assets/inventario.jpg' %}"  alt="..." />
                        <!-- <h5>Sarah W.</h5>
                         <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>-->
                     </div>
@@ -93,7 +92,7 @@
                             <li class="list-inline-item"><a href="{% url 'inicio' %}">Inicio</a></li>
                             <!-- Más elementos de la lista -->
                         </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">Creada por Adriel Viola.</p>
+                        <p class="text-muted small mb-4 mb-lg-0"><strong><p style="color: black" >Creado por Adriel Viola</p></strong>.</p>
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
