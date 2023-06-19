@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from app.form import formulario_api
-from .models import Usuario
+from django.shortcuts import render, redirect
+from .form import formulario_api
+from .models import Notebook
+
 
 
 
@@ -23,19 +24,25 @@ def login(request):
     return render(request, "app/login.html")
 
 def formularioapi(request):
-
-    if request.method == "POST":
-        miFormulario = formulario_api(request.POST) # Aqui me llega la informacion del html
-        print(miFormulario)
-
-        if miFormulario.is_valid():
-            informacion = miFormulario.cleaned_data
-            usuario = Usuario(nombre=informacion["USUARIO"], dni=informacion["DNI"])
-            usuario.save()
-            return render(request, "app/base.html")
+    if request.method == 'POST':
+        form = formulario_api(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('formularioapi')
     else:
-        miFormulario = formulario_api()
+        form = formulario_api()
 
-        print(miFormulario)
+    return render(request, 'app/formulario_api.html', {'form': form})
 
-    return render(request, "app/formulario_api.html", {"miFormulario": miFormulario})
+def buscar_notebooks(request):
+        form = BuscarNotebooksForm(request.POST)
+        notebooks = None
+
+        if form.is_valid():
+            marca = form.cleaned_data['marca']
+            modelo = form.cleaned_data['modelo']
+
+            notebooks = Notebook.objects.filter(marca=marca, modelo=modelo)
+
+        context = {'form': form, 'notebooks': notebooks}
+        return render(request, 'app/buscar_notebook.html', context)

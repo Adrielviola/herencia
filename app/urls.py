@@ -13,6 +13,7 @@ urlpatterns=[
     path('notebook/', views.notebook, name="notebook"),
     path('login/', views.login, name="login"),
     path('form_api/', views.formularioapi, name="formularioapi"),
+    path('buscar_notebooks/', views.buscar_notebooks, name="buscar_notebooks"),
 
 
 ]

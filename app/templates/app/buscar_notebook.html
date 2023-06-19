@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} Formulario busqueda {% endblock title %}
+
+{% block main %}
+<form method="POST" action=""> 
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+
+{% if notebooks %}
+    <h2>Resultados de la búsqueda:</h2>
+    <ul>
+        {% for notebook in notebooks %}
+            <li>{{ notebook.marca }} - {{ notebook.modelo }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    {% if form.errors %}
+        <p>Error: {{ form.errors }}</p>
+    {% endif %}
+    <p>No se encontraron resultados.</p>
+{% endif %}
+
+{% endblock %}
+
+
+
+
