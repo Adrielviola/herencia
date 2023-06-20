@@ -26,7 +26,7 @@
 
     {% block main %}    {% endblock main %}
 
-    <body>
+    <body id="page-top" class="container">
         <!-- Navigation-->
         
         <nav class="navbar navbar-black bg-black static-top">
@@ -63,20 +63,13 @@
         </header>
         <!-- Icons Grid-->
         </section>
-
         {% block img %}    
-            <div class="col-lg-4">
-                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                    <img class="img-fluid rounded-circle mb-3" src="{% static 'app/assets//bg-showcase-1.jpg' %}" alt="..." />
-                    <!--   <h5>Fred S.</h5>
-                        <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>-->
-                    </div>
-                </div>
+
         {% endblock %}
                 <div class="col-lg-4">
                     <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                         <img class="img-fluid rounded-circle mb-3" src="{% static 'app/assets/inventario.jpg' %}"  alt="..." />
-                       <!-- <h5>Sarah W.</h5>
+                    <!-- <h5>Sarah W.</h5>
                         <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>-->
                     </div>
                 </div>

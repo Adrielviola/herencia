@@ -28,7 +28,7 @@ def formularioapi(request):
         form = formulario_api(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('formularioapi')
+            return redirect('Formularioapi')
     else:
         form = formulario_api()
 
@@ -54,3 +54,11 @@ def Mostrar_notebooks(request):
     contexto= {"notebooks":notebooks} 
 
     return render(request, "app/mostrar_notebooks.html",contexto)
+
+def borrar(request, id):
+    notebooks = Notebook.objects.get(id=id)
+    notebooks.delete()
+    # vuelvo al menú
+    notebooks = Notebook.objects.all()  # trae todos los profesores
+    contexto = {"notebooks": notebooks}
+    return render(request, "app/mostrar_notebooks.html", contexto)

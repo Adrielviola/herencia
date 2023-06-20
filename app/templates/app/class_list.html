@@ -1,0 +1,20 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} class_lista {% endblock title %}
+
+
+{% block main %}
+
+{% for notebook in object_list %}
+
+    <li>
+        MARCA:{{ notebook.modelo }} <br>
+        <a href="{% url 'NotebooksDetail' notebook.id %}">Ver</a>
+        <a href="{% url 'Notebooksupdate' notebook.id %}">Editar</a>
+        <a href="{% url 'NotebooksDelete' notebook.id %}">Borrar</a>
+    </li>
+{% endfor %}
+
+{% endblock main %}

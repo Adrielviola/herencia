@@ -1,0 +1,14 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} class_lista {% endblock title %}
+
+
+{% block main %}
+
+MARCA:{{ notebook.modelo }}<br>
+<a href="{% url 'NotebooksList' %}">Regresar</a>
+
+
+{% endblock main %}

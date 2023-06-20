@@ -1,10 +1,14 @@
+{% extends 'app/base.html' %}
+
 {% load static %}
 
-{% block title %} Formulario {% endblock title %}
+{% block title %} mostrar busqueda {% endblock title %}
 
 
-
+{% block main %}
 {% for notebook in notebooks %}
-    <li>{{notebook}}</li>
+    <li>{{notebook}}</li><a href="{% url 'Borrar' notebook.id %}">Borrar</a>
 {% endfor %}
+
+{% endblock main %}
 
